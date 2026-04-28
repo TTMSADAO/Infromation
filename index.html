@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บริการการแพทย์แผนไทยและทางเลือก - รพ.สะเดา</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>บริการการแพทย์แผนไทยและทางเลือก - โรงพยาบาลสะเดา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2d5a27; /* เขียวเข้มการแพทย์ */
-            --secondary-color: #f4fbf4; /* เขียวอ่อนพื้นหลัง */
-            --accent-color: #d4a373; /* ทองน้ำตาล - Wellness */
-            --text-dark: #333;
+            --primary: #2d5a27;
+            --primary-light: #e8f5e9;
+            --secondary: #f4fbf4;
+            --accent: #d4a373;
+            --tcm-color: #c0392b;
+            --tcm-light: #fadbd8;
+            --text-dark: #2c3e50;
+            --text-gray: #7f8c8d;
             --white: #ffffff;
+            --shadow: 0 8px 20px rgba(0,0,0,0.08);
+            --border: #eaeded;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Sarabun', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Sarabun', sans-serif; }
+        body { background-color: var(--secondary); color: var(--text-dark); line-height: 1.6; }
+        a { text-decoration: none; }
 
-        body {
-            background-color: var(--secondary-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header & Navigation */
+        /* Navbar */
         header {
             background: var(--white);
             padding: 1rem 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -39,156 +37,114 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { height: 55px; }
+        .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; line-height: 1.2;}
+        .logo-text p { font-size: 0.9rem; color: var(--text-gray); }
+        .btn-main {
+            background: var(--accent); color: var(--white);
+            padding: 10px 25px; border-radius: 30px; font-weight: bold;
+            transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 163, 115, 0.4);
+            display: inline-flex; align-items: center; gap: 8px;
         }
-
-        .logo-area img {
-            height: 50px;
-        }
-
-        .logo-text h1 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-        }
+        .btn-main:hover { background: #bc8a5f; transform: translateY(-2px); color: white; }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.8)), 
-                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-            padding: 4rem 5%;
-            text-align: center;
+            background: linear-gradient(rgba(45, 90, 39, 0.85), rgba(45, 90, 39, 0.85)), 
+                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white; padding: 5rem 5%; text-align: center;
         }
-
-        .btn-booking {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.9; }
+        .hero .btn-outline {
+            background: transparent; border: 2px solid white; color: white;
+            padding: 10px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;
+            display: inline-flex; align-items: center; gap: 8px; margin: 5px;
         }
+        .hero .btn-outline:hover { background: white; color: var(--primary); }
 
-        .btn-booking:hover {
-            background: #bc8a5f;
-            transform: translateY(-3px);
+        /* Alert Add-on */
+        .notice-bar {
+            background: #fff3e0; border-left: 5px solid #ff9800;
+            padding: 1.2rem 5%; margin: 2rem 5%; border-radius: 8px;
+            display: flex; gap: 15px; align-items: flex-start;
+            box-shadow: var(--shadow);
         }
+        .notice-bar i { color: #ff9800; font-size: 1.5rem; margin-top: 3px; }
+        .notice-bar ul { margin-left: 20px; color: #d35400; font-size: 0.95rem; }
 
-        /* Filter System */
-        .filter-container {
-            padding: 2rem 5%;
-            text-align: center;
-        }
-
+        /* Filters */
+        .filter-container { padding: 1rem 5%; text-align: center; margin-top: 1rem; }
         .filter-btn {
-            padding: 10px 25px;
-            margin: 5px;
-            border: none;
-            background: var(--white);
-            color: var(--primary-color);
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            padding: 10px 25px; margin: 5px; border: 1px solid var(--primary);
+            background: var(--white); color: var(--primary); border-radius: 30px;
+            cursor: pointer; font-weight: 600; transition: 0.3s; font-size: 1rem;
         }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: var(--white); }
+        .filter-btn[onclick*="'tcm'"] { border-color: var(--tcm-color); color: var(--tcm-color); }
+        .filter-btn[onclick*="'tcm'"].active, .filter-btn[onclick*="'tcm'"]:hover { background: var(--tcm-color); color: white; }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Service Cards Grid */
+        /* Services Grid */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 0 5% 4rem;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px; padding: 2rem 5% 4rem; max-width: 1400px; margin: 0 auto;
         }
-
         .service-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
+            background: var(--white); border-radius: 16px; overflow: hidden;
+            box-shadow: var(--shadow); transition: 0.3s; display: flex; flex-direction: column;
+            border: 1px solid var(--border);
         }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 3px solid var(--primary); }
+        .service-card[data-category="tcm"] .card-img { border-color: var(--tcm-color); }
+        .service-card[data-category="wellness"] .card-img { border-color: var(--accent); }
+        
+        .card-content { padding: 1.5rem; flex-grow: 1; }
         .category-tag {
-            font-size: 0.8rem;
-            background: #e8f5e9;
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 10px;
-            font-weight: bold;
+            font-size: 0.8rem; background: var(--primary-light); color: var(--primary);
+            padding: 5px 12px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 10px;
         }
+        .service-card[data-category="tcm"] .category-tag { background: var(--tcm-light); color: var(--tcm-color); }
+        .service-card[data-category="wellness"] .category-tag { background: #fdf2e9; color: #e67e22; }
+        
+        .service-title { font-size: 1.3rem; color: var(--text-dark); margin-bottom: 5px; }
+        .service-time { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 15px; display: flex; gap: 5px; align-items: center; }
+        
+        .price-box { background: #f8f9fa; border-radius: 10px; padding: 12px; }
+        .price-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #ddd; font-size: 0.95rem; }
+        .price-row:last-child { border-bottom: none; }
+        .price-val { font-weight: 700; color: var(--primary); }
+        .service-card[data-category="tcm"] .price-val { color: var(--tcm-color); }
 
-        .service-title {
-            margin: 10px 0;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
+        .card-footer { padding: 1.2rem 1.5rem; background: var(--white); text-align: center; border-top: 1px solid var(--border); }
+        .btn-block { display: block; width: 100%; text-align: center; }
 
-        .price-info {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
+        /* Personnel Section */
+        .team-section { background: var(--white); padding: 5rem 5%; text-align: center; }
+        .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+        .section-desc { color: var(--text-gray); margin-bottom: 3rem; }
+        
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .team-card { text-align: center; }
+        .team-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); margin-bottom: 15px; box-shadow: var(--shadow); }
+        .team-card h4 { font-size: 1.2rem; color: var(--text-dark); }
+        .team-card p { font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 5px; }
+        .team-card span { font-size: 0.85rem; color: var(--text-gray); }
 
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dashed #eee;
-            padding: 5px 0;
-        }
-
-        .price-val {
-            font-weight: bold;
-            color: #e67e22;
-        }
-
-        .card-footer {
-            padding: 1rem 1.5rem;
-            background: #fafafa;
-            text-align: center;
-        }
-
-        /* Add-on Alert Area */
-        .addon-section {
-            background: #fff3e0;
-            margin: 2rem 5%;
-            padding: 1.5rem;
-            border-left: 5px solid #ff9800;
-            border-radius: 5px;
-        }
+        /* Footer */
+        footer { background: #1a3616; color: white; padding: 4rem 5% 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 2rem; }
+        .footer-col h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+        .footer-col p, .footer-col li { font-size: 0.95rem; margin-bottom: 10px; color: #ecf0f1; display: flex; gap: 10px; align-items: flex-start; }
+        .footer-col i { margin-top: 4px; color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #bdc3c7; }
 
         @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .hero h2 { font-size: 2rem; }
             .services-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; gap: 10px; }
+            .filter-btn { font-size: 0.9rem; padding: 8px 15px; }
         }
     </style>
 </head>
@@ -199,108 +155,296 @@
         <img src="https://img2.pic.in.th/pic/34b5ae8042fd52c90e27479e9fb56d8e.md.png" alt="Sadao Hospital Logo">
         <div class="logo-text">
             <h1>การแพทย์แผนไทยและทางเลือก</h1>
-            <small>โรงพยาบาลสะเดา</small>
+            <p>โรงพยาบาลสะเดา จ.สงขลา</p>
         </div>
     </div>
-    <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-booking" style="margin:0; font-size: 0.9rem;">จองคิวออนไลน์</a>
+    <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main"><i class="fa-regular fa-calendar-check"></i> จองคิวรับบริการ</a>
 </header>
 
 <section class="hero">
-    <h2>ดูแลสุขภาพด้วยวิถีธรรมชาติ</h2>
-    <p>สืบสานภูมิปัญญาไทย ผสานการแพทย์แผนจีน เพื่อคุณภาพชีวิตที่ดีขึ้น</p>
-    <a href="https://youtu.be/_nQcj7w2pPQ?si=hEc1x67eOvJj1h7w" target="_blank" class="btn-booking" style="background: transparent; border: 2px solid white;">🎬 ชมวิดีโอแนะนำบริการ</a>
+    <h2>สุขภาพดีวิถีธรรมชาติบำบัด</h2>
+    <p>ผสมผสานภูมิปัญญาแพทย์แผนไทยและการแพทย์แผนจีน เพื่อฟื้นฟูและดูแลร่างกายคุณ</p>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main"><i class="fa-solid fa-hand-pointer"></i> จองคิวออนไลน์</a>
+        <a href="https://youtu.be/_nQcj7w2pPQ?si=hEc1x67eOvJj1h7w" target="_blank" class="btn-outline"><i class="fa-brands fa-youtube"></i> วิดีโอแนะนำบริการ</a>
+    </div>
 </section>
 
-<div class="filter-container">
-    <button class="filter-btn active" onclick="filterServices('all')">ทั้งหมด</button>
-    <button class="filter-btn" onclick="filterServices('ttm')">แผนไทย (TTM)</button>
-    <button class="filter-btn" onclick="filterServices('tcm')">แผนจีน (TCM)</button>
-    <button class="filter-btn" onclick="filterServices('wellness')">Wellness/Spa</button>
+<div class="notice-bar">
+    <i class="fa-solid fa-circle-info"></i>
+    <div>
+        <strong>เงื่อนไขค่าบริการส่วนเพิ่ม (Add-on):</strong>
+        <ul>
+            <li><strong>ค่านอกเวลา/วันหยุด:</strong> เพิ่ม 60 บาท (ยกเว้นแผนจีน) หากรับบริการหลัง 16:00 น. หรือวันเสาร์-อาทิตย์</li>
+            <li><strong>จองต่อเนื่อง 2 ชั่วโมง:</strong> แผนไทย เพิ่ม 250 บาท/ชม. | แผนจีน เพิ่ม 150 บาท (ฝังเข็มคู่ครอบแก้ว)</li>
+            <li><strong>อบไอน้ำต่อเนื่อง:</strong> สิทธิประกันสังคม/ชำระเอง/รัฐวิสาหกิจ เพิ่ม 100 บาท (ข้าราชการ/บัตรทอง ฟรี)</li>
+        </ul>
+    </div>
 </div>
 
-<div class="addon-section">
-    <strong>💡 ข้อมูลเพิ่มเติม:</strong> ค่านอกเวลา/วันหยุด +60 บาท (ยกเว้นแผนจีน) | จองต่อเนื่องชั่วโมงที่ 2 มีส่วนลดพิเศษ
+<div class="filter-container">
+    <button class="filter-btn active" onclick="filterServices('all')">ดูบริการทั้งหมด</button>
+    <button class="filter-btn" onclick="filterServices('ttm')">🌿 คลินิกแพทย์แผนไทย</button>
+    <button class="filter-btn" onclick="filterServices('tcm')">🪡 คลินิกแพทย์แผนจีน</button>
+    <button class="filter-btn" onclick="filterServices('wellness')">✨ สปา Wellness</button>
 </div>
 
 <div class="services-grid" id="servicesGrid">
+    
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%9B.png?raw=true" class="card-img" alt="นวดประคบ">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%9A.png?raw=true" class="card-img" alt="นวดและประคบเพื่อการรักษา">
         <div class="card-content">
-            <span class="category-tag">แผนไทย</span>
-            <h3 class="service-title">นวดและประคบรักษา</h3>
-            <div class="price-info">
-                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0.-</span></div>
-                <div class="price-row"><span>บัตรทอง</span> <span class="price-val">100.-</span></div>
-                <div class="price-row"><span>ชำระเงินเอง</span> <span class="price-val">250.-</span></div>
+            <span class="category-tag">แพทย์แผนไทย</span>
+            <h3 class="service-title">นวดและประคบเพื่อการรักษา</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0 บาท</span></div>
+                <div class="price-row"><span>บัตรทอง (ร่วม/ยกเว้นร่วมจ่าย)</span> <span class="price-val">100 บาท</span></div>
+                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">250 บาท</span></div>
             </div>
-            <small>⏱ เวลาบริการ: ไม่เกิน 60 นาที</small>
         </div>
         <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-booking" style="padding: 8px 20px; font-size: 0.8rem;">จองคิวนี้</a>
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
         </div>
     </div>
 
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%7B%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.png?raw=true" class="card-img" alt="หลังคลอด">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%99%E0%B8%A7%E0%B8%94.png?raw=true" class="card-img" alt="นวดตัวส่งเสริมสุขภาพ">
         <div class="card-content">
-            <span class="category-tag">แผนไทย</span>
-            <h3 class="service-title">ฟื้นฟูมารดาหลังคลอด</h3>
-            <div class="price-info">
-                <div class="price-row"><span>ข้าราชการ/บัตรทอง</span> <span class="price-val">0 - 30.-</span></div>
-                <div class="price-row"><span>ชำระเงินเอง</span> <span class="price-val">500.-</span></div>
+            <span class="category-tag">แพทย์แผนไทย</span>
+            <h3 class="service-title">นวดตัวส่งเสริมสุขภาพ</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">250 บาท</span></div>
             </div>
         </div>
         <div class="card-footer">
-             <a href="#" class="btn-booking" style="padding: 8px 20px;">จองคิวนี้</a>
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="ttm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%99%E0%B8%A7%E0%B8%94%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2.png?raw=true" class="card-img" alt="นวดเท้าส่งเสริมสุขภาพ">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนไทย</span>
+            <h3 class="service-title">นวดเท้าเพื่อสุขภาพ/รักษา</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">250 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="ttm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.png?raw=true" class="card-img" alt="ฟื้นฟูมารดาหลังคลอด">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนไทย</span>
+            <h3 class="service-title">ฟื้นฟูมารดาหลังคลอด</h3>
+            <div class="service-time"><i class="fa-solid fa-leaf"></i> นวด ประคบ ทับหม้อเกลือ อบไอน้ำ</div>
+            <div class="price-box">
+                <div class="price-row"><span>ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span> <span class="price-val">0 บาท</span></div>
+                <div class="price-row"><span>บัตรทอง (ร่วมจ่าย)</span> <span class="price-val">30 บาท</span></div>
+                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">500 บาท</span></div>
+                <div class="price-row"><span>รัฐวิสาหกิจ (สำรองจ่าย)</span> <span class="price-val">670 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="ttm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AD%E0%B8%9A%E0%B9%84%E0%B8%AD%E0%B8%99%E0%B9%89%E0%B8%B3.png?raw=true" class="card-img" alt="อบไอน้ำสมุนไพร">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนไทย</span>
+            <h3 class="service-title">อบไอน้ำสมุนไพร</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลา 30 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span> <span class="price-val">0 บาท</span></div>
+                <div class="price-row"><span>บัตรทอง (ร่วมจ่าย)</span> <span class="price-val">30 บาท</span></div>
+                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">100 บาท</span></div>
+                <div class="price-row"><span>รัฐวิสาหกิจ (สำรองจ่าย)</span> <span class="price-val">120 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
         </div>
     </div>
 
     <div class="service-card" data-category="tcm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1.png?raw=true" class="card-img" alt="ฝังเข็ม">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1.png?raw=true" class="card-img" alt="ฝังเข็มเพื่อการรักษา">
         <div class="card-content">
-            <span class="category-tag" style="background:#fff3e0; color:#e67e22;">แผนจีน</span>
+            <span class="category-tag">แพทย์แผนจีน</span>
             <h3 class="service-title">ฝังเข็มเพื่อการรักษา</h3>
-            <div class="price-info">
-                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0.-</span></div>
-                <div class="price-row"><span>สิทธิอื่นๆ</span> <span class="price-val">200.-</span></div>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0 บาท</span></div>
+                <div class="price-row"><span>สิทธิอื่นๆ ทั้งหมด</span> <span class="price-val">200 บาท</span></div>
             </div>
-            <small>⏱ เวลาบริการ: ไม่เกิน 30 นาที</small>
         </div>
         <div class="card-footer">
-             <a href="#" class="btn-booking" style="padding: 8px 20px;">จองคิวนี้</a>
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="tcm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7.png?raw=true" class="card-img" alt="ครอบแก้ว">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนจีน</span>
+            <h3 class="service-title">ครอบแก้ว (Cupping)</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">150 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="tcm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2.png?raw=true" class="card-img" alt="ฝังเข็มใบหน้า">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนจีน</span>
+            <h3 class="service-title">ฝังเข็มใบหน้า (ลดสิว/ฝ้า/ริ้วรอย)</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <div class="price-box">
+                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">300 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="tcm">
+        <img src="https://img2.pic.in.th/pic/-030112561b55359c2a.png" class="card-img" alt="บริการแผนจีนอื่นๆ">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนจีน</span>
+            <h3 class="service-title">กัวซา / อบโคมร้อน</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที / รายการ</div>
+            <div class="price-box">
+                <div class="price-row"><span>กัวซา</span> <span class="price-val">150 บาท</span></div>
+                <div class="price-row"><span>อบโคมร้อน</span> <span class="price-val">50 บาท</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
+        </div>
+    </div>
+
+    <div class="service-card" data-category="tcm">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B8%AB%E0%B8%B9.png?raw=true" class="card-img" alt="เม็ดผักกาดแปะหู">
+        <div class="card-content">
+            <span class="category-tag">แพทย์แผนจีน</span>
+            <h3 class="service-title">เม็ดผักกาดแปะหู / ปรึกษาแพทย์</h3>
+            <div class="service-time"><i class="fa-solid fa-stethoscope"></i> ตรวจประเมินธาตุและอาการ</div>
+            <div class="price-box">
+                <div class="price-row"><span>เม็ดผักกาดแปะหู (10 นาที)</span> <span class="price-val">50 บาท</span></div>
+                <div class="price-row"><span>ปรึกษาแพทย์แผนจีน</span> <span class="price-val">ฟรี (0 บาท)</span></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
         </div>
     </div>
 
     <div class="service-card" data-category="wellness">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AA%E0%B8%9B%E0%B8%B2.png?raw=true" class="card-img" alt="สปา">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AA%E0%B8%9B%E0%B8%B2.png?raw=true" class="card-img" alt="สปา Wellness">
         <div class="card-content">
-            <span class="category-tag" style="background:#efebe9; color:#5d4037;">Wellness</span>
+            <span class="category-tag">Wellness</span>
             <h3 class="service-title">สครับเกลือ / สปาผิว</h3>
-            <div class="price-info">
-                <div class="price-row"><span>สครับเกลือ (60 นาที)</span> <span class="price-val">500.-</span></div>
-                <div class="price-row"><span>สปาผิว (120 นาที)</span> <span class="price-val">1,000.-</span></div>
+            <div class="service-time"><i class="fa-solid fa-spa"></i> ผ่อนคลายและบำรุงผิวพรรณ</div>
+            <div class="price-box">
+                <div class="price-row"><span>สครับเกลือ (60 นาที)</span> <span class="price-val">500 บาท</span></div>
+                <div class="price-row"><span>สปาผิว (60 นาที)</span> <span class="price-val">650 บาท</span></div>
+                <div class="price-row"><span>สปาผิว (120 นาที)</span> <span class="price-val">1,000 บาท</span></div>
             </div>
         </div>
         <div class="card-footer">
-             <a href="#" class="btn-booking" style="padding: 8px 20px;">จองคิวนี้</a>
+            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--accent);">จองคิวบริการนี้</a>
         </div>
     </div>
+
 </div>
+
+<section class="team-section">
+    <h2 class="section-title">ทีมผู้ให้บริการของเรา</h2>
+    <p class="section-desc">ดูแลคุณโดยทีมแพทย์และผู้เชี่ยวชาญเฉพาะทางที่ได้รับใบอนุญาต</p>
+    
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/8.png?raw=true" class="team-img" alt="พท.ศุภชัย อุไร">
+            <h4>พท.ศุภชัย อุไร (ชาย)</h4>
+            <p>แพทย์แผนไทยชำนาญการ</p>
+            <span>หัวหน้ากลุ่มงานฯ</span>
+        </div>
+        <div class="team-card">
+            <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/9.png?raw=true" class="team-img" alt="พท.ทศพร คงสุขนิรันดร์">
+            <h4>พท.ทศพร คงสุขนิรันดร์ (ปิง)</h4>
+            <p>แพทย์แผนไทย</p>
+            <span>คลินิกแพทย์แผนไทย</span>
+        </div>
+        <div class="team-card">
+            <img src="https://img2.pic.in.th/8721ae3ccb0abdb00619aa18dfdfc307.png" class="team-img" alt="พท.พนิตตา กีรติธราธร">
+            <h4>พท.พนิตตา กีรติธราธร (นุ่น)</h4>
+            <p>แพทย์แผนไทย</p>
+            <span>คลินิกแพทย์แผนไทย</span>
+        </div>
+        <div class="team-card">
+            <img src="https://img5.pic.in.th/file/secure-sv1/4e29260f0e0efb8981752c8f387e165e.png" class="team-img" alt="พจ.พรเพชร เพชรคงแก้ว" style="border-color: var(--tcm-color);">
+            <h4>พจ.พรเพชร เพชรคงแก้ว (บิ๋ม)</h4>
+            <p style="color: var(--tcm-color);">แพทย์แผนจีน</p>
+            <span>คลินิกแพทย์แผนจีน</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3><i class="fa-regular fa-hospital"></i> ติดต่อเรา</h3>
+            <p>กลุ่มงานการแพทย์แผนไทยและการแพทย์ทางเลือก โรงพยาบาลสะเดา</p>
+            <p><i class="fa-solid fa-phone"></i> 08 4267 1735</p>
+            <p><i class="fa-solid fa-phone-volume"></i> 0 7437 9994 ต่อ 410</p>
+            <p><i class="fa-brands fa-line"></i> LINE ID: @649dqeft</p>
+        </div>
+        <div class="footer-col">
+            <h3><i class="fa-regular fa-clock"></i> เวลาทำการ (แผนไทย)</h3>
+            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> จันทร์ - ศุกร์ : 08.00 - 20.00 น.</p>
+            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> เสาร์และนักขัตฤกษ์ : 08.00 - 16.00 น.</p>
+            <p><i class="fa-solid fa-circle-xmark" style="color:#e74c3c;"></i> ปิดทำการ วันอาทิตย์</p>
+        </div>
+        <div class="footer-col">
+            <h3><i class="fa-regular fa-clock"></i> เวลาทำการ (แผนจีน)</h3>
+            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> จันทร์ - ศุกร์ : 08.00 - 16.00 น.</p>
+            <p><i class="fa-solid fa-circle-xmark" style="color:#e74c3c;"></i> ปิดทำการ เสาร์-อาทิตย์ และนักขัตฤกษ์</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 กลุ่มงานการแพทย์แผนไทยและการแพทย์ทางเลือก โรงพยาบาลสะเดา. All Rights Reserved.
+    </div>
+</footer>
 
 <script>
     function filterServices(category) {
-        // อัปเดตปุ่ม Active
+        // Update active button state
         const buttons = document.querySelectorAll('.filter-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
 
-        // กรองการ์ด
+        // Filter cards smoothly
         const cards = document.querySelectorAll('.service-card');
         cards.forEach(card => {
             if (category === 'all' || card.getAttribute('data-category') === category) {
                 card.style.display = 'flex';
+                setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
             } else {
-                card.style.display = 'none';
+                card.style.opacity = '0'; card.style.transform = 'scale(0.9)';
+                setTimeout(() => { card.style.display = 'none'; }, 300);
             }
         });
     }
