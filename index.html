@@ -27,25 +27,16 @@
 
         /* Navbar */
         header {
-            background: var(--white);
-            padding: 1rem 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: var(--white); padding: 1rem 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;
         }
         .logo-area { display: flex; align-items: center; gap: 15px; }
         .logo-area img { height: 55px; }
         .logo-text h1 { font-size: 1.2rem; color: var(--primary); font-weight: 700; line-height: 1.2;}
         .logo-text p { font-size: 0.9rem; color: var(--text-gray); }
         .btn-main {
-            background: var(--accent); color: var(--white);
-            padding: 10px 25px; border-radius: 30px; font-weight: bold;
-            transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 163, 115, 0.4);
-            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent); color: var(--white); padding: 10px 25px; border-radius: 30px; 
+            font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer;
         }
         .btn-main:hover { background: #bc8a5f; transform: translateY(-2px); color: white; }
 
@@ -53,33 +44,30 @@
         .hero {
             background: linear-gradient(rgba(45, 90, 39, 0.85), rgba(45, 90, 39, 0.85)), 
                         url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80') center/cover;
-            color: white; padding: 5rem 5%; text-align: center;
+            color: white; padding: 4rem 5%; text-align: center;
         }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.9; }
-        .hero .btn-outline {
-            background: transparent; border: 2px solid white; color: white;
-            padding: 10px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;
-            display: inline-flex; align-items: center; gap: 8px; margin: 5px;
+        .hero h2 { font-size: 2.2rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; margin-bottom: 25px; opacity: 0.9; }
+        .btn-outline {
+            background: transparent; border: 2px solid white; color: white; padding: 10px 25px; 
+            border-radius: 30px; font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; margin: 5px;
         }
-        .hero .btn-outline:hover { background: white; color: var(--primary); }
+        .btn-outline:hover { background: white; color: var(--primary); }
 
         /* Alert Add-on */
         .notice-bar {
-            background: #fff3e0; border-left: 5px solid #ff9800;
-            padding: 1.2rem 5%; margin: 2rem 5%; border-radius: 8px;
-            display: flex; gap: 15px; align-items: flex-start;
-            box-shadow: var(--shadow);
+            background: #fff3e0; border-left: 5px solid #ff9800; padding: 1.2rem 5%; margin: 2rem 5%; 
+            border-radius: 8px; display: flex; gap: 15px; align-items: flex-start; box-shadow: var(--shadow);
         }
         .notice-bar i { color: #ff9800; font-size: 1.5rem; margin-top: 3px; }
-        .notice-bar ul { margin-left: 20px; color: #d35400; font-size: 0.95rem; }
+        .notice-bar ul { margin-left: 20px; color: #d35400; font-size: 0.95rem; margin-top: 8px;}
+        .notice-bar li { margin-bottom: 4px; }
 
         /* Filters */
-        .filter-container { padding: 1rem 5%; text-align: center; margin-top: 1rem; }
+        .filter-container { padding: 1rem 5%; text-align: center; }
         .filter-btn {
-            padding: 10px 25px; margin: 5px; border: 1px solid var(--primary);
-            background: var(--white); color: var(--primary); border-radius: 30px;
-            cursor: pointer; font-weight: 600; transition: 0.3s; font-size: 1rem;
+            padding: 8px 20px; margin: 5px; border: 1px solid var(--primary); background: var(--white); 
+            color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600; transition: 0.3s; font-size: 1rem;
         }
         .filter-btn.active, .filter-btn:hover { background: var(--primary); color: var(--white); }
         .filter-btn[onclick*="'tcm'"] { border-color: var(--tcm-color); color: var(--tcm-color); }
@@ -87,13 +75,12 @@
 
         /* Services Grid */
         .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px; padding: 2rem 5% 4rem; max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; 
+            padding: 1rem 5% 4rem; max-width: 1400px; margin: 0 auto;
         }
         .service-card {
-            background: var(--white); border-radius: 16px; overflow: hidden;
-            box-shadow: var(--shadow); transition: 0.3s; display: flex; flex-direction: column;
-            border: 1px solid var(--border);
+            background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); 
+            transition: 0.3s; display: flex; flex-direction: column; border: 1px solid var(--border);
         }
         .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 3px solid var(--primary); }
@@ -102,49 +89,52 @@
         
         .card-content { padding: 1.5rem; flex-grow: 1; }
         .category-tag {
-            font-size: 0.8rem; background: var(--primary-light); color: var(--primary);
-            padding: 5px 12px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 10px;
+            font-size: 0.8rem; background: var(--primary-light); color: var(--primary); padding: 5px 12px; 
+            border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 10px;
         }
         .service-card[data-category="tcm"] .category-tag { background: var(--tcm-light); color: var(--tcm-color); }
         .service-card[data-category="wellness"] .category-tag { background: #fdf2e9; color: #e67e22; }
         
-        .service-title { font-size: 1.3rem; color: var(--text-dark); margin-bottom: 5px; }
+        .service-title { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px; font-weight: 700; }
         .service-time { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 15px; display: flex; gap: 5px; align-items: center; }
         
-        .price-box { background: #f8f9fa; border-radius: 10px; padding: 12px; }
-        .price-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #ddd; font-size: 0.95rem; }
+        .price-box { background: #f8f9fa; border-radius: 10px; padding: 10px; font-size: 0.9rem;}
+        .price-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--text-gray); border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-bottom: 5px; font-size: 0.85rem;}
+        .price-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #ddd; align-items: center;}
         .price-row:last-child { border-bottom: none; }
-        .price-val { font-weight: 700; color: var(--primary); }
-        .service-card[data-category="tcm"] .price-val { color: var(--tcm-color); }
+        .price-label { flex: 1; padding-right: 10px;}
+        .price-in, .price-out { width: 70px; text-align: right; font-weight: 700; color: var(--primary); }
+        .price-out { color: #e67e22; }
+        .service-card[data-category="tcm"] .price-in { color: var(--tcm-color); }
 
         .card-footer { padding: 1.2rem 1.5rem; background: var(--white); text-align: center; border-top: 1px solid var(--border); }
-        .btn-block { display: block; width: 100%; text-align: center; }
+        .btn-block { display: block; width: 100%; text-align: center; padding: 12px; }
 
         /* Personnel Section */
-        .team-section { background: var(--white); padding: 5rem 5%; text-align: center; }
+        .team-section { background: var(--white); padding: 4rem 5%; text-align: center; }
         .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
         .section-desc { color: var(--text-gray); margin-bottom: 3rem; }
         
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .team-card { text-align: center; }
-        .team-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); margin-bottom: 15px; box-shadow: var(--shadow); }
-        .team-card h4 { font-size: 1.2rem; color: var(--text-dark); }
+        .team-category { font-size: 1.3rem; color: var(--text-dark); margin: 2rem 0 1.5rem; padding-bottom: 10px; border-bottom: 2px solid var(--primary-light); text-align: left; max-width: 1200px; margin-left: auto; margin-right: auto;}
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .team-card { text-align: center; background: var(--secondary); padding: 1.5rem; border-radius: 15px; transition: 0.3s; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); background: white; border: 1px solid var(--border);}
+        .team-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); margin-bottom: 15px; background: #ddd;}
+        .team-card h4 { font-size: 1.1rem; color: var(--text-dark); line-height: 1.3; margin-bottom: 5px;}
         .team-card p { font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 5px; }
-        .team-card span { font-size: 0.85rem; color: var(--text-gray); }
+        .team-card span { font-size: 0.85rem; color: var(--text-gray); display: block;}
 
         /* Footer */
         footer { background: #1a3616; color: white; padding: 4rem 5% 2rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 2rem; }
         .footer-col h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        .footer-col p, .footer-col li { font-size: 0.95rem; margin-bottom: 10px; color: #ecf0f1; display: flex; gap: 10px; align-items: flex-start; }
-        .footer-col i { margin-top: 4px; color: var(--accent); }
+        .footer-col p { font-size: 0.95rem; margin-bottom: 10px; color: #ecf0f1; display: flex; gap: 10px; align-items: flex-start; }
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #bdc3c7; }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; text-align: center; }
-            .hero h2 { font-size: 2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .filter-btn { font-size: 0.9rem; padding: 8px 15px; }
+            .price-header { font-size: 0.75rem; }
+            .price-in, .price-out { width: 55px; }
         }
     </style>
 </head>
@@ -163,7 +153,7 @@
 
 <section class="hero">
     <h2>สุขภาพดีวิถีธรรมชาติบำบัด</h2>
-    <p>ผสมผสานภูมิปัญญาแพทย์แผนไทยและการแพทย์แผนจีน เพื่อฟื้นฟูและดูแลร่างกายคุณ</p>
+    <p>ผสมผสานภูมิปัญญาแพทย์แผนไทยและการแพทย์แผนจีน</p>
     <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
         <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main"><i class="fa-solid fa-hand-pointer"></i> จองคิวออนไลน์</a>
         <a href="https://youtu.be/_nQcj7w2pPQ?si=hEc1x67eOvJj1h7w" target="_blank" class="btn-outline"><i class="fa-brands fa-youtube"></i> วิดีโอแนะนำบริการ</a>
@@ -173,39 +163,38 @@
 <div class="notice-bar">
     <i class="fa-solid fa-circle-info"></i>
     <div>
-        <strong>เงื่อนไขค่าบริการส่วนเพิ่ม (Add-on):</strong>
+        <strong>เงื่อนไขค่าบริการและส่วนเพิ่ม (Add-on):</strong>
         <ul>
-            <li><strong>ค่านอกเวลา/วันหยุด:</strong> เพิ่ม 60 บาท (ยกเว้นแผนจีน) หากรับบริการหลัง 16:00 น. หรือวันเสาร์-อาทิตย์</li>
-            <li><strong>จองต่อเนื่อง 2 ชั่วโมง:</strong> แผนไทย เพิ่ม 250 บาท/ชม. | แผนจีน เพิ่ม 150 บาท (ฝังเข็มคู่ครอบแก้ว)</li>
-            <li><strong>อบไอน้ำต่อเนื่อง:</strong> สิทธิประกันสังคม/ชำระเอง/รัฐวิสาหกิจ เพิ่ม 100 บาท (ข้าราชการ/บัตรทอง ฟรี)</li>
+            <li><strong>ค่านอกเวลา/วันหยุด (OOH):</strong> บวกเพิ่ม 60 บาท (ยกเว้นแผนจีน) หากรับบริการหลังเวลา 16:00 น. หรือวันเสาร์-อาทิตย์</li>
+            <li><strong>การจองต่อเนื่อง 2 ชั่วโมง:</strong> แผนไทย บวกเพิ่ม 250 บาท (ชั่วโมงที่ 2) | แผนจีน บวกเพิ่ม 150 บาท (ฝังเข็มคู่ครอบแก้ว)</li>
+            <li><strong>บริการอบไอน้ำต่อเนื่อง:</strong> สิทธิประกันสังคม/ชำระเอง/รัฐวิสาหกิจ ชำระเพิ่ม 100 บาท (สิทธิข้าราชการ/บัตรทอง ฟรี 0 บาท)</li>
         </ul>
     </div>
 </div>
 
 <div class="filter-container">
-    <button class="filter-btn active" onclick="filterServices('all')">ดูบริการทั้งหมด</button>
-    <button class="filter-btn" onclick="filterServices('ttm')">🌿 คลินิกแพทย์แผนไทย</button>
-    <button class="filter-btn" onclick="filterServices('tcm')">🪡 คลินิกแพทย์แผนจีน</button>
+    <button class="filter-btn active" onclick="filterServices('all')">ดูทั้งหมด</button>
+    <button class="filter-btn" onclick="filterServices('ttm')">🌿 แพทย์แผนไทย</button>
+    <button class="filter-btn" onclick="filterServices('tcm')">🪡 แพทย์แผนจีน</button>
     <button class="filter-btn" onclick="filterServices('wellness')">✨ สปา Wellness</button>
 </div>
 
 <div class="services-grid" id="servicesGrid">
     
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%9A.png?raw=true" class="card-img" alt="นวดและประคบเพื่อการรักษา">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%9A.png?raw=true" class="card-img" alt="นวดและประคบ">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนไทย</span>
             <h3 class="service-title">นวดและประคบเพื่อการรักษา</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 60 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0 บาท</span></div>
-                <div class="price-row"><span>บัตรทอง (ร่วม/ยกเว้นร่วมจ่าย)</span> <span class="price-val">100 บาท</span></div>
-                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">250 บาท</span></div>
+                <div class="price-header"><span class="price-label">สิทธิการรักษา</span><span class="price-in">ในเวลา</span><span class="price-out">นอกเวลา</span></div>
+                <div class="price-row"><span class="price-label">ข้าราชการ/อปท.</span><span class="price-in">0.-</span><span class="price-out">60.-</span></div>
+                <div class="price-row"><span class="price-label">บัตรทอง (ร่วม/ยกเว้นร่วม)</span><span class="price-in">100.-</span><span class="price-out">100.-</span></div>
+                <div class="price-row"><span class="price-label">ประกันสังคม/ชำระเอง</span><span class="price-in">250.-</span><span class="price-out">310.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="ttm">
@@ -213,232 +202,156 @@
         <div class="card-content">
             <span class="category-tag">แพทย์แผนไทย</span>
             <h3 class="service-title">นวดตัวส่งเสริมสุขภาพ</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 60 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">250 บาท</span></div>
+                <div class="price-header"><span class="price-label">สิทธิการรักษา</span><span class="price-in">ในเวลา</span><span class="price-out">นอกเวลา</span></div>
+                <div class="price-row"><span class="price-label">ทุกสิทธิการรักษา</span><span class="price-in">250.-</span><span class="price-out">310.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%99%E0%B8%A7%E0%B8%94%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2.png?raw=true" class="card-img" alt="นวดเท้าส่งเสริมสุขภาพ">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%99%E0%B8%A7%E0%B8%94%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2.png?raw=true" class="card-img" alt="นวดเท้า">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนไทย</span>
-            <h3 class="service-title">นวดเท้าเพื่อสุขภาพ/รักษา</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 60 นาที</div>
+            <h3 class="service-title">นวดเท้าส่งเสริมสุขภาพ</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 60 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">250 บาท</span></div>
+                <div class="price-header"><span class="price-label">สิทธิการรักษา</span><span class="price-in">ในเวลา</span><span class="price-out">นอกเวลา</span></div>
+                <div class="price-row"><span class="price-label">ทุกสิทธิการรักษา</span><span class="price-in">250.-</span><span class="price-out">310.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.png?raw=true" class="card-img" alt="ฟื้นฟูมารดาหลังคลอด">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.png?raw=true" class="card-img" alt="หลังคลอด">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนไทย</span>
-            <h3 class="service-title">ฟื้นฟูมารดาหลังคลอด</h3>
-            <div class="service-time"><i class="fa-solid fa-leaf"></i> นวด ประคบ ทับหม้อเกลือ อบไอน้ำ</div>
+            <h3 class="service-title">บริการหลังคลอด (Postpartum)</h3>
+            <div class="service-time"><i class="fa-solid fa-ban"></i> ไม่มีบริการนอกเวลาราชการ</div>
             <div class="price-box">
-                <div class="price-row"><span>ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span> <span class="price-val">0 บาท</span></div>
-                <div class="price-row"><span>บัตรทอง (ร่วมจ่าย)</span> <span class="price-val">30 บาท</span></div>
-                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">500 บาท</span></div>
-                <div class="price-row"><span>รัฐวิสาหกิจ (สำรองจ่าย)</span> <span class="price-val">670 บาท</span></div>
+                <div class="price-row"><span class="price-label">ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span><span class="price-in">0.-</span></div>
+                <div class="price-row"><span class="price-label">บัตรทอง (ร่วมจ่าย)</span><span class="price-in">30.-</span></div>
+                <div class="price-row"><span class="price-label">ประกันสังคม/ชำระเอง</span><span class="price-in">500.-</span></div>
+                <div class="price-row"><span class="price-label">รัฐวิสาหกิจ (สำรองจ่าย)</span><span class="price-in">670.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="ttm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AD%E0%B8%9A%E0%B9%84%E0%B8%AD%E0%B8%99%E0%B9%89%E0%B8%B3.png?raw=true" class="card-img" alt="อบไอน้ำสมุนไพร">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AD%E0%B8%9A%E0%B9%84%E0%B8%AD%E0%B8%99%E0%B9%89%E0%B8%B3.png?raw=true" class="card-img" alt="อบไอน้ำ">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนไทย</span>
             <h3 class="service-title">อบไอน้ำสมุนไพร</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลา 30 นาที</div>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ตามระยะเวลาที่กำหนด</div>
             <div class="price-box">
-                <div class="price-row"><span>ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span> <span class="price-val">0 บาท</span></div>
-                <div class="price-row"><span>บัตรทอง (ร่วมจ่าย)</span> <span class="price-val">30 บาท</span></div>
-                <div class="price-row"><span>ประกันสังคม/ชำระเงินเอง</span> <span class="price-val">100 บาท</span></div>
-                <div class="price-row"><span>รัฐวิสาหกิจ (สำรองจ่าย)</span> <span class="price-val">120 บาท</span></div>
+                <div class="price-row"><span class="price-label">ข้าราชการ/บัตรทอง(ยกเว้นร่วม)</span><span class="price-in">0.-</span></div>
+                <div class="price-row"><span class="price-label">บัตรทอง (ร่วมจ่าย)</span><span class="price-in">30.-</span></div>
+                <div class="price-row"><span class="price-label">ประกันสังคม/ชำระเอง</span><span class="price-in">100.-</span></div>
+                <div class="price-row"><span class="price-label">รัฐวิสาหกิจ (สำรองจ่าย)</span><span class="price-in">120.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="tcm">
-        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1.png?raw=true" class="card-img" alt="ฝังเข็มเพื่อการรักษา">
+        <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1.png?raw=true" class="card-img" alt="ฝังเข็มรักษา">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนจีน</span>
             <h3 class="service-title">ฝังเข็มเพื่อการรักษา</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 30 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ข้าราชการ/อปท.</span> <span class="price-val">0 บาท</span></div>
-                <div class="price-row"><span>สิทธิอื่นๆ ทั้งหมด</span> <span class="price-val">200 บาท</span></div>
+                <div class="price-row"><span class="price-label">ข้าราชการ/อปท.</span><span class="price-in">0.-</span></div>
+                <div class="price-row"><span class="price-label">สิทธิอื่นๆ ทั้งหมด</span><span class="price-in">200.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="tcm">
         <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7.png?raw=true" class="card-img" alt="ครอบแก้ว">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนจีน</span>
-            <h3 class="service-title">ครอบแก้ว (Cupping)</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <h3 class="service-title">ครอบแก้ว</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 30 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">150 บาท</span></div>
+                <div class="price-row"><span class="price-label">ทุกสิทธิการรักษา</span><span class="price-in">150.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="tcm">
         <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%9D%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2.png?raw=true" class="card-img" alt="ฝังเข็มใบหน้า">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนจีน</span>
-            <h3 class="service-title">ฝังเข็มใบหน้า (ลดสิว/ฝ้า/ริ้วรอย)</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที</div>
+            <h3 class="service-title">ฝังเข็มใบหน้า</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 30 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>ทุกสิทธิการรักษา</span> <span class="price-val">300 บาท</span></div>
+                <div class="price-row"><span class="price-label">ทุกสิทธิการรักษา</span><span class="price-in">300.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
-        </div>
-    </div>
-
-    <div class="service-card" data-category="tcm">
-        <img src="https://img2.pic.in.th/pic/-030112561b55359c2a.png" class="card-img" alt="บริการแผนจีนอื่นๆ">
-        <div class="card-content">
-            <span class="category-tag">แพทย์แผนจีน</span>
-            <h3 class="service-title">กัวซา / อบโคมร้อน</h3>
-            <div class="service-time"><i class="fa-regular fa-clock"></i> ใช้เวลาไม่เกิน 30 นาที / รายการ</div>
-            <div class="price-box">
-                <div class="price-row"><span>กัวซา</span> <span class="price-val">150 บาท</span></div>
-                <div class="price-row"><span>อบโคมร้อน</span> <span class="price-val">50 บาท</span></div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="tcm">
         <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B8%AB%E0%B8%B9.png?raw=true" class="card-img" alt="เม็ดผักกาดแปะหู">
         <div class="card-content">
             <span class="category-tag">แพทย์แผนจีน</span>
-            <h3 class="service-title">เม็ดผักกาดแปะหู / ปรึกษาแพทย์</h3>
-            <div class="service-time"><i class="fa-solid fa-stethoscope"></i> ตรวจประเมินธาตุและอาการ</div>
+            <h3 class="service-title">เม็ดผักกาดแปะหู</h3>
+            <div class="service-time"><i class="fa-regular fa-clock"></i> ไม่เกิน 10 นาที</div>
             <div class="price-box">
-                <div class="price-row"><span>เม็ดผักกาดแปะหู (10 นาที)</span> <span class="price-val">50 บาท</span></div>
-                <div class="price-row"><span>ปรึกษาแพทย์แผนจีน</span> <span class="price-val">ฟรี (0 บาท)</span></div>
+                <div class="price-row"><span class="price-label">ทุกสิทธิการรักษา</span><span class="price-in">50.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--tcm-color);">จองคิวนี้</a></div>
     </div>
 
     <div class="service-card" data-category="wellness">
         <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/%E0%B8%AA%E0%B8%9B%E0%B8%B2.png?raw=true" class="card-img" alt="สปา Wellness">
         <div class="card-content">
             <span class="category-tag">Wellness</span>
-            <h3 class="service-title">สครับเกลือ / สปาผิว</h3>
-            <div class="service-time"><i class="fa-solid fa-spa"></i> ผ่อนคลายและบำรุงผิวพรรณ</div>
+            <h3 class="service-title">บริการสปา / สครับเกลือ</h3>
+            <div class="service-time"><i class="fa-solid fa-spa"></i> ผ่อนคลายและบำรุงผิว</div>
             <div class="price-box">
-                <div class="price-row"><span>สครับเกลือ (60 นาที)</span> <span class="price-val">500 บาท</span></div>
-                <div class="price-row"><span>สปาผิว (60 นาที)</span> <span class="price-val">650 บาท</span></div>
-                <div class="price-row"><span>สปาผิว (120 นาที)</span> <span class="price-val">1,000 บาท</span></div>
+                <div class="price-row"><span class="price-label">สครับเกลือ (60 นาที)</span><span class="price-in">500.-</span></div>
+                <div class="price-row"><span class="price-label">สปาผิว (60 นาที)</span><span class="price-in">650.-</span></div>
+                <div class="price-row"><span class="price-label">สปาผิว (120 นาที)</span><span class="price-in">1,000.-</span></div>
             </div>
         </div>
-        <div class="card-footer">
-            <a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--accent);">จองคิวบริการนี้</a>
-        </div>
+        <div class="card-footer"><a href="https://ttmsadao.github.io/ttmed-sadao-queue/" class="btn-main btn-block" style="background:var(--accent);">จองคิวนี้</a></div>
     </div>
 
 </div>
 
 <section class="team-section">
-    <h2 class="section-title">ทีมผู้ให้บริการของเรา</h2>
-    <p class="section-desc">ดูแลคุณโดยทีมแพทย์และผู้เชี่ยวชาญเฉพาะทางที่ได้รับใบอนุญาต</p>
-    
-    <div class="team-grid">
-        <div class="team-card">
-            <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/8.png?raw=true" class="team-img" alt="พท.ศุภชัย อุไร">
-            <h4>พท.ศุภชัย อุไร (ชาย)</h4>
-            <p>แพทย์แผนไทยชำนาญการ</p>
-            <span>หัวหน้ากลุ่มงานฯ</span>
-        </div>
-        <div class="team-card">
-            <img src="https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/9.png?raw=true" class="team-img" alt="พท.ทศพร คงสุขนิรันดร์">
-            <h4>พท.ทศพร คงสุขนิรันดร์ (ปิง)</h4>
-            <p>แพทย์แผนไทย</p>
-            <span>คลินิกแพทย์แผนไทย</span>
-        </div>
-        <div class="team-card">
-            <img src="https://img2.pic.in.th/8721ae3ccb0abdb00619aa18dfdfc307.png" class="team-img" alt="พท.พนิตตา กีรติธราธร">
-            <h4>พท.พนิตตา กีรติธราธร (นุ่น)</h4>
-            <p>แพทย์แผนไทย</p>
-            <span>คลินิกแพทย์แผนไทย</span>
-        </div>
-        <div class="team-card">
-            <img src="https://img5.pic.in.th/file/secure-sv1/4e29260f0e0efb8981752c8f387e165e.png" class="team-img" alt="พจ.พรเพชร เพชรคงแก้ว" style="border-color: var(--tcm-color);">
-            <h4>พจ.พรเพชร เพชรคงแก้ว (บิ๋ม)</h4>
-            <p style="color: var(--tcm-color);">แพทย์แผนจีน</p>
-            <span>คลินิกแพทย์แผนจีน</span>
-        </div>
-    </div>
+    <h2 class="section-title">ทีมบุคลากรผู้ให้บริการ</h2>
+    <p class="section-desc">ดูแลท่านอย่างใกล้ชิดโดยทีมแพทย์และผู้เชี่ยวชาญเฉพาะทาง</p>
+    <div id="teamContainer"></div>
 </section>
 
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
-            <h3><i class="fa-regular fa-hospital"></i> ติดต่อเรา</h3>
-            <p>กลุ่มงานการแพทย์แผนไทยและการแพทย์ทางเลือก โรงพยาบาลสะเดา</p>
+            <h3>ติดต่อเรา</h3>
+            <p><i class="fa-solid fa-hospital"></i> รพ.สะเดา จ.สงขลา</p>
             <p><i class="fa-solid fa-phone"></i> 08 4267 1735</p>
             <p><i class="fa-solid fa-phone-volume"></i> 0 7437 9994 ต่อ 410</p>
             <p><i class="fa-brands fa-line"></i> LINE ID: @649dqeft</p>
         </div>
-        <div class="footer-col">
-            <h3><i class="fa-regular fa-clock"></i> เวลาทำการ (แผนไทย)</h3>
-            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> จันทร์ - ศุกร์ : 08.00 - 20.00 น.</p>
-            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> เสาร์และนักขัตฤกษ์ : 08.00 - 16.00 น.</p>
-            <p><i class="fa-solid fa-circle-xmark" style="color:#e74c3c;"></i> ปิดทำการ วันอาทิตย์</p>
-        </div>
-        <div class="footer-col">
-            <h3><i class="fa-regular fa-clock"></i> เวลาทำการ (แผนจีน)</h3>
-            <p><i class="fa-solid fa-check-circle" style="color:#2ecc71;"></i> จันทร์ - ศุกร์ : 08.00 - 16.00 น.</p>
-            <p><i class="fa-solid fa-circle-xmark" style="color:#e74c3c;"></i> ปิดทำการ เสาร์-อาทิตย์ และนักขัตฤกษ์</p>
-        </div>
     </div>
-    <div class="footer-bottom">
-        &copy; 2026 กลุ่มงานการแพทย์แผนไทยและการแพทย์ทางเลือก โรงพยาบาลสะเดา. All Rights Reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2026 กลุ่มงานการแพทย์แผนไทยและการแพทย์ทางเลือก โรงพยาบาลสะเดา.</div>
 </footer>
 
 <script>
+    // System Filter
     function filterServices(category) {
-        // Update active button state
-        const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
-
-        // Filter cards smoothly
-        const cards = document.querySelectorAll('.service-card');
-        cards.forEach(card => {
+        document.querySelectorAll('.service-card').forEach(card => {
             if (category === 'all' || card.getAttribute('data-category') === category) {
                 card.style.display = 'flex';
                 setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
@@ -448,6 +361,64 @@
             }
         });
     }
+
+    // Personnel Data Load
+    const PERSONNEL = [
+      { id: 1, name: { th: "นพ.ชัยวุฒิ สุขสมานวงศ์", en: "" }, nickname: "", role: { th: "รักษาการในตำแหน่ง ผู้อำนวยการโรงพยาบาลสะเดา", en: "" }, subRole: { th: "นายแพทย์เชี่ยวชาญ (ด้านเวชกรรมป้องกัน)", en: "" }, image: "", level: "director" },
+      { id: 2, name: { th: "พท.ศุภชัย อุไร", en: "" }, nickname: { th: "ชาย", en: "" }, role: { th: "หัวหน้ากลุ่มงานการแพทย์แผนไทยฯ", en: "" }, subRole: { th: "แพทย์แผนไทยชำนาญการ", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/8.png?raw=true", level: "head" },
+      { id: 3, name: { th: "พท.ทศพร คงสุขนิรันดร์", en: "" }, nickname: { th: "ปิง", en: "" }, role: { th: "แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/9.png?raw=true", level: "doctor" },
+      { id: 4, name: { th: "พจ.พรเพชร เพชรคงแก้ว", en: "" }, nickname: { th: "บิ๋ม", en: "" }, role: { th: "แพทย์แผนจีน", en: "" }, image: "https://img5.pic.in.th/file/secure-sv1/4e29260f0e0efb8981752c8f387e165e.png", level: "doctor" },
+      { id: 15, name: { th: "พท.พนิตตา กีรติธราธร", en: "" }, nickname: { th: "นุ่น", en: "" }, role: { th: "แพทย์แผนไทย", en: "" }, image: "https://img2.pic.in.th/8721ae3ccb0abdb00619aa18dfdfc307.png", level: "doctor" },
+      { id: 5, name: { th: "คุณจินดา จันทร์หอม", en: "" }, nickname: { th: "เจี๊ยบ", en: "" }, role: { th: "พนักงานช่วยเหลือคนไข้", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/36.png?raw=true", level: "support" },
+      { id: 6, name: { th: "คุณเจนจิรา หมอราช", en: "" }, nickname: { th: "เจน", en: "" }, role: { th: "พนักงานบริการ", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/10.png?raw=true", level: "support" },
+      { id: 7, name: { th: "คุณอทิตย์ติญา แดงนุ้ย", en: "" }, nickname: { th: "ฟา", en: "" }, role: { th: "ผช.แพทย์แผนจีน", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/main/37.png?raw=true", level: "support" },
+      { id: 8, name: { th: "คุณรจนา จันเงิน", en: "" }, nickname: { th: "แหม่ม", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/29.png?raw=true", level: "assistant_thai" },
+      { id: 9, name: { th: "คุณอรรถพล อั้นซ้าย", en: "" }, nickname: { th: "บ่าว", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/30.png?raw=true", level: "assistant_thai" },
+      { id: 10, name: { th: "คุณศินารัตน์ แซ่ตั้ง", en: "" }, nickname: { th: "ซี", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/35.png?raw=true", level: "assistant_thai" },
+      { id: 11, name: { th: "คุณจุฑามาศ เว้นบาป", en: "" }, nickname: { th: "ฝน", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/31.png?raw=true", level: "assistant_thai" },
+      { id: 12, name: { th: "คุณรัตน์ชนก พูลคุ้ม", en: "" }, nickname: { th: "กวาง", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/32.png?raw=true", level: "assistant_thai" },
+      { id: 13, name: { th: "คุณนิกษ์นิภา คงสุวรรณ์", en: "" }, nickname: { th: "การ์ตูน", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/33.png?raw=true", level: "assistant_thai" },
+      { id: 14, name: { th: "คุณณิชาภัทร ทองบริบูรณ์", en: "" }, nickname: { th: "วาวา", en: "" }, role: { th: "ผช.แพทย์แผนไทย", en: "" }, image: "https://github.com/TTMSADAO/ttmed-sadao-queue/blob/PIC/34.png?raw=true", level: "assistant_thai" }
+    ];
+
+    const generateTeamHTML = () => {
+        const container = document.getElementById('teamContainer');
+        
+        // Groups
+        const groups = [
+            { title: "คณะผู้บริหารและทีมแพทย์", levels: ["director", "head", "doctor"] },
+            { title: "ผู้ช่วยแพทย์แผนไทยและแผนจีน", levels: ["assistant_thai", "support"] }
+        ];
+
+        let htmlContent = '';
+
+        groups.forEach(group => {
+            const members = PERSONNEL.filter(p => group.levels.includes(p.level || "assistant_thai"));
+            if(members.length > 0) {
+                htmlContent += `<h3 class="team-category">${group.title}</h3><div class="team-grid">`;
+                members.forEach(p => {
+                    const fallbackImg = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
+                    const imgSrc = p.image ? p.image : fallbackImg;
+                    const nick = p.nickname?.th ? ` (${p.nickname.th})` : '';
+                    const sub = p.subRole?.th ? `<span>${p.subRole.th}</span>` : '';
+                    
+                    htmlContent += `
+                        <div class="team-card">
+                            <img src="${imgSrc}" class="team-img" alt="${p.name.th}" onerror="this.src='${fallbackImg}'">
+                            <h4>${p.name.th}${nick}</h4>
+                            <p>${p.role.th}</p>
+                            ${sub}
+                        </div>
+                    `;
+                });
+                htmlContent += `</div>`;
+            }
+        });
+        container.innerHTML = htmlContent;
+    };
+
+    // Initialize
+    window.onload = generateTeamHTML;
 </script>
 
 </body>
